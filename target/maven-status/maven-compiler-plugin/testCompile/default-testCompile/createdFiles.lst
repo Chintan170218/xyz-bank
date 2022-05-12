@@ -1,0 +1,3 @@
+com\bank\testbase\TestBase.class
+com\bank\testsuite\BankTest.class
+resources\testdata\TestData.class

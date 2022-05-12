@@ -1,0 +1,24 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 5, Errors: 0, Skipped: 0, Time elapsed: 36.275 s <<< FAILURE! - in TestSuite
+bankManagerShouldAddCustomerSuccessfully(com.bank.testsuite.BankTest)  Time elapsed: 0.917 s  <<< FAILURE!
+java.lang.NullPointerException
+	at com.bank.testsuite.BankTest.bankManagerShouldAddCustomerSuccessfully(BankTest.java:36)
+
+bankManagerShouldOpenAccountSuccessfully(com.bank.testsuite.BankTest)  Time elapsed: 0.823 s  <<< FAILURE!
+java.lang.NullPointerException
+	at com.bank.testsuite.BankTest.bankManagerShouldOpenAccountSuccessfully(BankTest.java:50)
+
+customerShouldLoginAndLogoutSuccessfully(com.bank.testsuite.BankTest)  Time elapsed: 0.852 s  <<< FAILURE!
+java.lang.NullPointerException
+	at com.bank.testsuite.BankTest.customerShouldLoginAndLogoutSuccessfully(BankTest.java:63)
+
+customerShouldDepositMoneySuccessfully(com.bank.testsuite.BankTest)  Time elapsed: 0.968 s  <<< FAILURE!
+java.lang.NullPointerException
+	at com.bank.testsuite.BankTest.customerShouldDepositMoneySuccessfully(BankTest.java:77)
+
+customerShouldWithdrawMoneySuccessfully(com.bank.testsuite.BankTest)  Time elapsed: 0.973 s  <<< FAILURE!
+java.lang.NullPointerException
+	at com.bank.testsuite.BankTest.customerShouldWithdrawMoneySuccessfully(BankTest.java:90)
+
