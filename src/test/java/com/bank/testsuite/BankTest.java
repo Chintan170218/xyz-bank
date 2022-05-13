@@ -47,9 +47,10 @@ public class BankTest extends TestBase {
 
     @Test(priority = 2, groups = {"sanity", "smoke", "regression"})
     public void bankManagerShouldOpenAccountSuccessfully() {
+        addCustomerPage.clickHomeButton();
         homePage.clickBankManagerLoginButton();
         bankManagerLoginPage.clickOpenAccountButton();
-        openAccountPage.selectCustomerJustAddedDropDown("Albus Dumbledore");
+        openAccountPage.selectCustomerJustAddedDropDown("Winnie Pooh");
         openAccountPage.selectCurrencyDropDown("Pound");
         openAccountPage.clickProcessButton();
         String expectedMessage = "Account created successfully";
@@ -60,8 +61,9 @@ public class BankTest extends TestBase {
 
     @Test(priority = 3, groups = {"smoke", "regression"})
     public void customerShouldLoginAndLogoutSuccessfully() {
+        openAccountPage.clickHomeButton();
         homePage.clickCustomerLoginBtnButton();
-        customerLoginPage.selectNameFromDropDownMenu("Albus Dumbledore");
+        customerLoginPage.selectNameFromDropDownMenu("Winnie Pooh");
         customerLoginPage.clickLoginButton();
         String expectedMessage = "logout";
         String actualMessage = customersPage.verifyLogoutButton();
@@ -74,8 +76,9 @@ public class BankTest extends TestBase {
 
     @Test(priority = 4, groups = {"smoke", "regression"})
     public void customerShouldDepositMoneySuccessfully() {
+        customerLoginPage.clickHomeButton();
         homePage.clickCustomerLoginBtnButton();
-        customerLoginPage.selectNameFromDropDownMenu("Albus Dumbledore");
+        customerLoginPage.selectNameFromDropDownMenu("Winnie Pooh");
         customerLoginPage.clickLoginButton();
         accountPage.clickDepositButton();
         accountPage.enterDepositAmount("100");
@@ -87,12 +90,10 @@ public class BankTest extends TestBase {
 
     @Test(priority = 5, groups = {"regression"})
     public void customerShouldWithdrawMoneySuccessfully() throws InterruptedException {
+        accountPage.clickHomeButton();
         homePage.clickCustomerLoginBtnButton();
-        customerLoginPage.selectNameFromDropDownMenu("Albus Dumbledore");
+        customerLoginPage.selectNameFromDropDownMenu("Winnie Pooh");
         customerLoginPage.clickLoginButton();
-        accountPage.clickDepositButton();
-        accountPage.enterDepositAmount("100");
-        accountPage.clickSmallDepositButton();
         accountPage.clickWithdrawalButton();
         accountPage.enterWithdrawalAmount("50");
         accountPage.clickSmallWithdrawalButton();
