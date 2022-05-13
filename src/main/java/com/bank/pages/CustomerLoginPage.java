@@ -16,6 +16,10 @@ public class CustomerLoginPage extends Utility {
     public CustomerLoginPage() {
         PageFactory.initElements(driver, this);
     }
+    
+    @CacheLookup
+    @FindBy(xpath = "//button[contains(text(),'Home')]")
+    WebElement homeBtn;
 
     @CacheLookup
     @FindBy(xpath = "//select[@id='userSelect']")
@@ -29,7 +33,14 @@ public class CustomerLoginPage extends Utility {
     @CacheLookup
     @FindBy(xpath = "//label[contains(text(),'Your Name :')]")
     WebElement yourNameText;
-
+    
+    
+    
+    public void clickHomeButton(){
+        clickOnElement(homeBtn);
+        CustomListeners.node.log(Status.PASS, "Click on 'Home' Button");
+        Reporter.log("Click on 'Home' Button" + "<br>");
+    }
 
     public void selectNameFromDropDownMenu(String name) {
         selectByVisibleTextFromDropDown(nameDropDownMenu, name);
